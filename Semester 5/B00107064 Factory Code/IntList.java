@@ -1,0 +1,44 @@
+import java.util.StringTokenizer;
+
+public class IntList extends NumberList {
+
+	int size;
+
+	public IntList(String list) {
+
+		size = 0;
+		StringTokenizer token = new StringTokenizer(list);
+		size = token.countTokens();
+
+		// Allocate some space for the array
+		intList = new int[size];
+
+		// Store each list item an the appropriate array
+		for (int i = 0; i < size; i++) {
+			intList[i] = Integer.parseInt(token.nextToken());
+		}
+	}
+
+	// Sums the values in the list up and returns the total
+	public Number sum() {
+
+		int n = 0;
+
+		for (int i = 0; i < size; i++) {
+			n = n + intList[i];
+		}
+
+		return new Integer(n);
+	}
+
+	// Display method outputs the list with the index number beside the values
+	public void display() {
+
+		System.out.print("Integer List");
+
+		for (int i = 0; i < size; i++) {
+			System.out.println("[" + i + "] = " + intList[i]);
+		}
+	}
+
+}// end class
